@@ -1,19 +1,22 @@
 import { Trash } from "lucide-react";
 import React from "react";
+import { toast, ToastContainer } from "react-toastify";
 
 const Cart = ({ carts, setCarts }) => {
   const totalPrice = carts.reduce((sum, item) => sum + item.price, 0);
   const handlePayments = () => {
     setCarts([]);
+    toast.success("payment successful");
   };
 
   const handleDelete = (item) => {
     const filteredArray = carts.filter((cart) => cart.id !== item.id);
     setCarts(filteredArray);
+    toast.success("item deleted!");
   };
 
   return (
-    <div className="p-10">
+    <div className="p-10 max-w-7xl mx-auto">
       <h2 className="font-bold text-2xl text-center">Your Cart</h2>
 
       {carts.length === 0 ? (
