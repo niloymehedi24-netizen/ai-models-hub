@@ -50,7 +50,9 @@ function App() {
         ></Models>
       ) : null}
 
-      {activeTab === "cart" ? <Cart carts={carts}></Cart> : null}
+      {activeTab === "cart" ? (
+        <Cart carts={carts} setCarts={setCarts}></Cart>
+      ) : null}
 
       <Footer></Footer>
     </>
