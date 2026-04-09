@@ -1,7 +1,8 @@
 import React from "react";
 
 const Cart = ({ carts }) => {
-  console.log(carts);
+  const totalPrice = carts.reduce((sum, item) => sum + item.price, 0);
+  console.log(totalPrice);
   return (
     <div className="p-10">
       <h2 className="font-bold text-2xl text-center">Your Cart</h2>
@@ -29,7 +30,7 @@ const Cart = ({ carts }) => {
 
         <div className="flex justify-between bg-black text-white text-2xl font-bold p-5 mt-5 rounded-lg">
           <div>Total</div>
-          <div>0</div>
+          <div>${totalPrice}/month</div>
         </div>
       </div>
     </div>
